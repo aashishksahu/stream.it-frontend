@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StreamService } from '../stream.service';
 
 @Component({
   selector: 'app-navigate',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api: StreamService) { }
+
+  topSongs: [] = [];
 
   ngOnInit(): void {
+    this.api.getTopSongs().subscribe(res => {
+
+      this.topSongs = res['resultSet'];
+      console.log(this.topSongs)
+    }, err => {
+      console.log(err);
+    })
   }
 
 }

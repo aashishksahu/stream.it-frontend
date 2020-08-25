@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 
           // route to home page if login successful
           if (localStorage.getItem('token')) {
-            this.router.navigate(['/'])
+            this.router.navigate(['/app/home'])
           }
         }
       }, error => {

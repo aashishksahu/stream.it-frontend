@@ -1,1 +1,13 @@
-<p>navigate works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12 search-container">
+            <input class="search-box" type="text" placeholder="Search Title or Artist">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 search-container" *ngFor="let song of topSongs">
+            <app-song-container [metaData]="song"></app-song-container>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.search-box {
+  width: 90%;
+  margin: 20px;
+  color: var(--text);
+  background: transparent;
+  border: none; 
+  border-bottom: 1px solid var(--border);
+  padding: 10px;
+}

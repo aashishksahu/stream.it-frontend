@@ -3,7 +3,7 @@
 }
 
 .container{
-    width: 90%;
+    width: 50%;
 }
 
 .row .col-12{
@@ -19,14 +19,20 @@ h1{
     text-align: center;
     padding-top: 50px;
     color: var(--text);
+    padding-bottom: 20px;
+    border-bottom: 4px solid var(--border);
 }
 
 input, button{
-    width: 30%;
+    width: 100%;
     color: var(--text);
     padding: 10px;
     background: transparent;
     border: 1px solid var(--border);
+}
+
+.radio-btn{
+    width: 20px;
 }
 
 button{

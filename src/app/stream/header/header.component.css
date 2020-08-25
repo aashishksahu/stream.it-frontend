@@ -1,0 +1,31 @@
+.header {
+  color: var(--text);
+  border-bottom: 4px solid var(--less-dark);
+  display: flex;
+  height: 100%;
+}
+
+.title {
+  height: 100%;
+  font-size: 3em;
+  margin-left: 30px;
+  width: 85%;
+}
+
+.sign-out-btn {
+  float: right;
+  width: 100px;
+  color: var(--text);
+  padding: 5px;
+  background: transparent;
+  border: none;
+  margin: 0.9em;
+}
+
+.sign-out-btn:active {
+  background-color: var(--border);
+}
+
+.sign-out-btn:hover {
+  background-color: var(--less-dark);
+}
