@@ -1,9 +1,44 @@
+.container {
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
+}
+
 .search-box {
   width: 90%;
   margin: 20px;
   color: var(--text);
   background: transparent;
-  border: none; 
+  border: none;
   border-bottom: 1px solid var(--border);
   padding: 10px;
+}
+
+.top-10-heading {
+  color: var(--text);
+  font-size: 30px;
+  margin: 20px;
+}
+
+.music-row {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.music-col {
+  display: inline-block;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dak);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 20px;
 }

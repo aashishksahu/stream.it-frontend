@@ -19,4 +19,8 @@ export class StreamService {
     return this.http.get(`${this.url}/music/top`, this.httpOptions);
   }
 
+  getFavourites(userid) {
+    return this.http.get(`${this.url}/music/getFavourites?userid=${userid}`, this.httpOptions);
+  }
+
 }

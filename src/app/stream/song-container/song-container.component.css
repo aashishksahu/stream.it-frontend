@@ -1,4 +1,27 @@
-.song-box{
-    height: 100px;
-    width: 100px;
+.song-box {
+  color: var(--text);
+  /* padding: 2px; */
+  margin: 20px;
+}
+
+img {
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  width: 200px;
+  height: 200px;
+}
+
+img:hover {
+  border: 1px solid var(--border);
+}
+
+.title {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.label {
+  font-size: small;
 }

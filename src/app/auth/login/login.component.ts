@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("token", response['token'])
           localStorage.setItem("username", response["username"])
           localStorage.setItem("usertype", response["usertype"])
+          localStorage.setItem("userid", response["userid"])
 
           // route to home page if login successful
           if (localStorage.getItem('token')) {
