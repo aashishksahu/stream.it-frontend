@@ -28,12 +28,15 @@ export class AuthService {
     const authToken = localStorage.getItem('token');
 
     if (authToken) {
-      return localStorage.getItem('token');
-
+      return authToken;
     } else {
       this.router.navigate(['/auth/login']);
 
     }
+  }
+
+  public registerUser(payload){
+    return this.http.post(`${this.url}/auth/register`, JSON.stringify(payload))
   }
 
 }

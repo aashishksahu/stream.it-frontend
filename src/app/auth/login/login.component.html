@@ -1,6 +1,38 @@
-<input type="text" [(ngModel)]="username" placeholder="Username">
-<br>
-<input type="password" [(ngModel)]="password" placeholder="Password">
-<br>
-<button (click)="createLogin()">Login</button>
-<button (click)="destroyLogin()">Logout</button>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Streamer</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-12">
+            <input type="text" placeholder="Username" [(ngModel)]="username">
+          </div>
+          <div class="col-12">
+            <input type="password" placeholder="Password" [(ngModel)]="password">
+          </div>
+          <div class="col-12">
+            <div class="row">
+              <div class="col-12">
+                <button (click)="createLogin()">Login</button>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <a routerLink="/auth/register">Register</a>
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

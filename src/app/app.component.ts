@@ -12,7 +12,6 @@ export class AppComponent{
 
   constructor(private router: Router, private auth: AuthService){
     const checkToken = this.auth.getToken();
-
   }
 
 }

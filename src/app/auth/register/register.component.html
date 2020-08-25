@@ -1,1 +1,53 @@
-<p>register works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Streamer</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-12">
+            <input type="text" placeholder="Username" [(ngModel)]="username">
+          </div>
+
+          <div class="col-12">
+            <input type="password" placeholder="Password" [(ngModel)]="password">
+          </div>
+
+          <div class="col-12">
+            <div class="row">
+              <div class="col-4"></div>
+              <div class="col-2">
+                <input class="radio-btn" type="radio" [(ngModel)]="usertype" value="Premium">
+                <label>Premium</label>
+            </div>
+            <div class="col-2">
+                <input class="radio-btn" type="radio" [(ngModel)]="usertype" value="Basic">
+                <label>Basic</label>
+              </div>
+              <div class="col-4"></div>
+
+            </div>
+          </div>
+
+          <div class="col-12">
+            <input type="email" placeholder="Email" [(ngModel)]="email">
+          </div>
+
+          <div class="col-12">
+            <input type="date" placeholder="Birthday" [(ngModel)]="dob">
+          </div>
+          
+          <div class="col-12">
+            <button (click)="createUser()">Register</button>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
