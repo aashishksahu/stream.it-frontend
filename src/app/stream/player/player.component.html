@@ -1,0 +1,51 @@
+<div class="container">
+
+  <div class="player">
+
+    <div *ngIf="!nowPlaying" class="empty-placeholder">
+      <p style="text-align:center;">Add songs to queue to play them</p>
+    </div>
+
+    <div class="song-box" *ngIf="nowPlaying">
+      <div class="cover">
+        <img [src]="nowPlaying.albumart">
+      </div>
+      <div class="controls">
+
+      </div>
+      <div class="title">
+        {{nowPlaying.title}}
+      </div>
+      <div class="artist">
+        {{nowPlaying.artist}}
+      </div>
+      <div class="label">
+        {{nowPlaying.label}}
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-8">
+      <p>Queue</p>
+    </div>
+    <div class="col-4">
+      <button (click)="emptyQueue()">clear</button>
+    </div>
+  </div>
+
+  <div class="queue">
+    <div class="queue-list row" *ngFor="let item of queue">
+      <div class="col-2">
+        <img class="queue-album-art" [src]="item.albumart">
+      </div>
+      <div class="queue-item col-6">
+        <div class="queue-item-title">{{item.title}}</div>
+        <div class="queue-item-artist">{{item.artist}}</div>
+      </div>
+      <div class="col-4"><button (click)="removeTrackFromQueue(item.audioid)" class="rm-q-btn">Remove</button></div>
+    </div>
+
+  </div>
+</div>

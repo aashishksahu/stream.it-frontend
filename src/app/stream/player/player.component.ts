@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, IterableDiffers } from '@angular/core';
+import { QueueService } from '../queue.service';
 
 @Component({
   selector: 'app-player',
@@ -7,9 +8,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerComponent implements OnInit {
 
-  constructor() { }
+  queue = [];
+  nowPlaying: [] = [];
+  isNowPlayingEmpty;
+
+  constructor(private differ: IterableDiffers, private qService: QueueService) { }
 
   ngOnInit(): void {
+    this.updateQueue();
+  }
+
+  ngDoCheck() {
+    let changes = this.differ.find(this.queue);
+    if (changes) {
+
+      this.nowPlaying = this.queue[0];
+      // console.log(this.nowPlaying)
+    }
+  }
+
+  emptyQueue() {
+    this.qService.emptyQueue();
+    this.updateQueue();
+  }
+
+  removeTrackFromQueue(id) {
+    this.qService.removeFromQueue(id)
+    this.updateQueue()
+  }
+
+  updateQueue() {
+    this.queue = this.qService.getQueue();
   }
 
 }

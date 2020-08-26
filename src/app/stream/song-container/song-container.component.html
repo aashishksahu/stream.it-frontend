@@ -1,14 +1,15 @@
 <div class="song-box">
-    <div class="cover">
-        <img [src]="albumArt">
-    </div>
-    <div class="title">
-        {{title}}
-    </div>
-    <div class="artist">
-        {{artist}}
-    </div>
-    <div class="label">
-        {{label}}
-    </div>
+  <div class="cover">
+      <img [src]="albumArt">
+      <button class="add-queue-btn" (click)="addToQueue()" title="Add to Queue">&#43;</button>
+  </div>
+  <div class="title">
+    {{title}}
+  </div>
+  <div class="artist">
+    {{artist}}
+  </div>
+  <div class="label">
+    {{label}}
+  </div>
 </div>

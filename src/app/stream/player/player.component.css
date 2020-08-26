@@ -1,0 +1,126 @@
+.player {
+  height: 45vh;
+  width: 100%;
+}
+
+.song-box {
+  color: var(--text);
+  margin: 20px;
+}
+
+.cover {
+  display: flex;
+}
+
+img {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
+}
+
+.empty-placeholder{
+  margin: 20px auto;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  width: 200px; 
+  height: 200px;
+}
+
+.queue-album-art {
+  width: 50px;
+  height: 50px;
+  margin: 8px auto;
+}
+
+.title {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.label {
+  font-size: small;
+}
+
+
+.container {
+  color: var(--text);
+}
+
+.row {
+  display: flex;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  margin: 0px;
+}
+
+
+button {
+  float: right;
+  margin-right: 20px;
+  display: table-cell;
+  line-height: 40px;
+  vertical-align: middle;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: var(--text);
+}
+
+button:hover {
+  text-decoration: underline;
+
+}
+
+button:active {
+  background-color: var(--border);
+}
+
+p {
+  font-size: large;
+  margin-left: 10px;
+  display: table-cell;
+  line-height: 40px;
+  vertical-align: middle;
+}
+
+.queue {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  overflow-y: scroll;
+  white-space: nowrap;
+  height: 32vh;
+}
+
+.queue-list {
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+
+}
+
+
+.queue-item-title {
+  margin-top: 10px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.queue-item-artist {
+  margin-bottom: 10px;
+  font-size: small;
+}
+
+.rm-q-btn {
+  margin-right: 5px;
+  font-size: small;
+  line-height: 60px;
+  text-align: center;
+}
+
+.rm-q-btn:active {
+  background: transparent;
+}
