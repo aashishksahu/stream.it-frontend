@@ -7,21 +7,30 @@
     </div>
 
     <div class="song-box" *ngIf="nowPlaying">
-      <div class="cover">
-        <img [src]="nowPlaying.albumart">
+      <div style="display: flex;">
+        <div class="cover">
+          <img [src]="nowPlaying.albumart">
+        </div>
+        <div class="title-fields">
+          <div class="title">
+            {{nowPlaying.title}}
+          </div>
+          <div class="artist">
+            {{nowPlaying.artist}}
+          </div>
+          <div class="label">
+            {{nowPlaying.label}}
+          </div>
+        </div>
+        <div class="title-fields">
+          
+        </div>
       </div>
+
       <div class="controls" *ngIf="audioStream">
         <audio [src]="audioStream" autoplay controls></audio>
       </div>
-      <div class="title">
-        {{nowPlaying.title}}
-      </div>
-      <div class="artist">
-        {{nowPlaying.artist}}
-      </div>
-      <div class="label">
-        {{nowPlaying.label}}
-      </div>
+
     </div>
   </div>
 
