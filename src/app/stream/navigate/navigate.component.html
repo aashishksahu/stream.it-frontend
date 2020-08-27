@@ -1,7 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <input class="search-box" type="text" placeholder="Search Title or Artist">
+      <input class="search-box" (keyup)="search($event)" type="text" placeholder="Search Title or Artist">
+    </div>
+  </div>
+
+  <div *ngIf="searchTrue" class="row">
+    <div class="top-10-heading col-12">
+      Search
+    </div>
+    <div class="music-row">
+      <div class="music-col" *ngFor="let song of searchResults">
+        <app-song-container [metaData]="song"></app-song-container>
+      </div>
     </div>
   </div>
 

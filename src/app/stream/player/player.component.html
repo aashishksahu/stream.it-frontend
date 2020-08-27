@@ -21,10 +21,13 @@
           <div class="label">
             {{nowPlaying.label}}
           </div>
+          <div class="title-fields" style="display: flex; margin:0px;">
+            <div class="col-6"><button style="font-size: 30px;" (click)="like()" title="Like"> &#9829;</button></div>
+            <div class="col-6"><button style="font-size: 30px;" (click)="addFavourites()"
+                title="Add to Favourites">&#43;</button></div>
+          </div>
         </div>
-        <div class="title-fields">
-          
-        </div>
+
       </div>
 
       <div class="controls" *ngIf="audioStream">

@@ -12,6 +12,8 @@ export class NavigateComponent implements OnInit {
 
   topSongs: [] = [];
   favourites: [] = [];
+  searchResults: [] = [];
+  searchTrue: boolean = false;
 
   ngOnInit(): void {
     this.api.getTopSongs().subscribe(res => {
@@ -31,6 +33,29 @@ export class NavigateComponent implements OnInit {
       console.log(err);
     })
 
+  }
+
+  search(evt) {
+    this.api.getSearchResults(evt.target.value).subscribe(response => {
+      this.searchResults = response['resultSet'];
+      
+      if(this.searchResults == undefined){
+        this.searchTrue = false;
+        return;
+      }
+      
+      if (this.searchResults.length > 0) {
+        this.searchTrue = true;
+      } else {
+        this.searchTrue = false;
+      }
+
+      console.log(this.searchResults.length)
+
+    }, err => {
+      console.log(err);
+
+    })
   }
 
 }

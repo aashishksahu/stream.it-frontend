@@ -73,4 +73,34 @@ export class PlayerComponent implements OnInit {
     this.queue = this.qService.getQueue();
   }
 
+  like() {
+    this.api.addLikes({
+      "audioid": this.nowPlaying['audioid'],
+      "userid": localStorage.getItem('userid')
+    }).subscribe(response => {
+
+      if (response['code'] == 400 || response['code'] == 401) {
+        alert(response['message'])
+      }
+    }, err => {
+      console.log(err);
+    })
+  }
+
+  addFavourites() {
+    this.api.addFavourites({
+      "audioid": this.nowPlaying['audioid'],
+      "userid": localStorage.getItem('userid')
+    }).subscribe(response => {
+
+      if (response['code'] == 400 || response['code'] == 401) {
+        alert(response['message'])
+      } else {
+        alert("Added to Favourites")
+      }
+    }, err => {
+      console.log(err);
+    })
+  }
+
 }

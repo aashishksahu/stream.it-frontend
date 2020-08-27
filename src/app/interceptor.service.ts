@@ -12,7 +12,7 @@ export class InterceptorService {
 
     const authReq = req.clone({
       setHeaders: {
-        'Content-Type': 'application/json; charset=utf-8, audio/mpeg'
+        'Content-Type': 'application/json; charset=utf-8'
       }
     });
     return next.handle(authReq);

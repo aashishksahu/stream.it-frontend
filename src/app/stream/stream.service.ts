@@ -29,10 +29,26 @@ export class StreamService {
   }
 
   getStream(id) {
-    var customOptions = this.httpOptions;
-    customOptions['responseType'] = 'blob';
+    let customHeaders = new HttpHeaders();
+    customHeaders.set('Authorization', this.auth.getToken())
+    customHeaders.set('Content-Type', 'audio/mpeg')
 
-    return this.http.get(`${this.url}/music/stream?audioid=${id}`, customOptions)
+    return this.http.get(`${this.url}/music/stream?audioid=${id}`, {
+      headers: customHeaders,
+      'responseType': 'blob'
+    })
+  }
+
+  addLikes(payload) {
+    return this.http.post(`${this.url}/music/addLikes`, payload, this.httpOptions);
+  }
+
+  addFavourites(payload) {
+    return this.http.post(`${this.url}/music/addFavourites`, payload, this.httpOptions);
+  }
+
+  getSearchResults(term){
+    return this.http.get(`${this.url}/music/search?searchterm=${term}`, this.httpOptions);
   }
 
 }
