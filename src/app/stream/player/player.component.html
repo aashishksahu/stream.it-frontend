@@ -10,8 +10,8 @@
       <div class="cover">
         <img [src]="nowPlaying.albumart">
       </div>
-      <div class="controls">
-
+      <div class="controls" *ngIf="audioStream">
+        <audio [src]="audioStream" autoplay controls></audio>
       </div>
       <div class="title">
         {{nowPlaying.title}}

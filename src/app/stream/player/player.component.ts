@@ -1,5 +1,6 @@
 import { Component, OnInit, IterableDiffers } from '@angular/core';
 import { QueueService } from '../queue.service';
+import { StreamService } from '../stream.service';
 
 @Component({
   selector: 'app-player',
@@ -11,8 +12,9 @@ export class PlayerComponent implements OnInit {
   queue = [];
   nowPlaying: [] = [];
   isNowPlayingEmpty;
+  audioStream;
 
-  constructor(private differ: IterableDiffers, private qService: QueueService) { }
+  constructor(private differ: IterableDiffers, private qService: QueueService, private api: StreamService) { }
 
   ngOnInit(): void {
     this.updateQueue();
@@ -20,10 +22,29 @@ export class PlayerComponent implements OnInit {
 
   ngDoCheck() {
     let changes = this.differ.find(this.queue);
-    if (changes) {
 
-      this.nowPlaying = this.queue[0];
-      // console.log(this.nowPlaying)
+    if (changes) {
+      if (this.nowPlaying == undefined || this.nowPlaying.length < 1) {
+        this.nowPlaying = this.queue[0];
+
+        this.startStream();
+
+      } else if (this.queue.length < 1) {
+        this.nowPlaying = undefined;
+      }
+    }
+  }
+
+  startStream() {
+
+    if (this.nowPlaying != undefined) {
+      this.api.getStream(this.nowPlaying['audioid']).subscribe(response => {
+
+        if (response["code"] != 400) {
+          this.audioStream = this.api.getStreamLink() + this.nowPlaying['audioid'];
+        }
+      })
+
     }
   }
 
@@ -34,6 +55,17 @@ export class PlayerComponent implements OnInit {
 
   removeTrackFromQueue(id) {
     this.qService.removeFromQueue(id)
+
+    try {
+      if (this.nowPlaying['audioid'] != this.queue[0]['audioid']) {
+        this.nowPlaying = this.queue[0];
+        this.startStream();
+      }
+    } catch (error) {
+      // No need to do anything
+    }
+
+
     this.updateQueue()
   }
 
